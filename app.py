@@ -115,6 +115,14 @@ def add_movie():
     return parsed_info
 
 
+@app.route("/remove_movie", methods=["POST"])
+def remove_movie():
+    request_json = request.get_json()
+    original_name = request_json['original_name'].replace(' ', '_')
+    os.system("rm -rf database/" + original_name)
+    return {"success": "true"}, 200
+
+
 @app.route("/take_movies", methods=["POST"])
 def take_movies():
     movie_names = os.listdir("database")
