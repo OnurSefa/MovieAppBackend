@@ -9,5 +9,5 @@ if __name__ == '__main__':
         "url": "https://www.imdb.com/title/tt3099498/"
     }
     response = requests.post("http://127.0.0.1:5000/add_movie", json=current_json).json()
-    print(response.json())
+    print(response)
 
