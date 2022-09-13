@@ -1,11 +1,9 @@
 from flask import Flask, request, Response
 from flask_cors import CORS
 import os
-import cv2
 import jsonpickle
 import re
 import requests
-import io
 
 app = Flask(__name__)
 CORS(app)
